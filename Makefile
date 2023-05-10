@@ -7,12 +7,12 @@ lint:
 	@protolint lint .
 
 lint_fix:
-	@protolint lint .
+	@protolint lint -fix .
 
 gen_message:
-	@protoc --go_out=plugins=grpc:.. protobuf/message/*.proto
+	@protoc --proto_path=protobuf --go_out=. protobuf/message/*.proto
 
 gen_service:
-	@protoc --proto_path=protobuf --go_out=plugins=grpc:.. protobuf/rpc/*.proto
+	@protoc --proto_path=protobuf --go_out=. --go_opt=Mmessage/user.proto=share-proto/generated/message protobuf/rpc/*.proto
 
-.PHONY: gen_message gen_service
+.PHONY: gen_message gen_service gen_svc

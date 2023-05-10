@@ -1,9 +1,15 @@
-# share proto
+# share-proto
 
-## gen message proto
+## Manual
 
-protoc --go_out=plugins=grpc:.. protobuf/message/*.proto
+1. generate message
 
-## gen service proto
+```sh
+make gen_message
+```
 
-protoc --proto_path=protobuf --go_out=plugins=grpc:.. protobuf/rpc/*.proto
+2. generate service
+
+```sh
+make gen_service
+```

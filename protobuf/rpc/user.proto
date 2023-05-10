@@ -4,7 +4,7 @@ package rpc;
 
 import "message/user.proto";
 
-option go_package = "share-proto/proto-gen/rpc";
+option go_package = "generated/rpc";
 
 service User {
   rpc GetUserDataByAccessToken(message.AccessToken)

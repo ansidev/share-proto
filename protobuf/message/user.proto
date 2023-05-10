@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package message;
 
-option go_package = "share-proto/proto-gen/message";
+option go_package = "generated/message";
 
 message AccessToken {
   string access_token = 1;
